@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol BookDataSourceDelegate {
+protocol BookDataSourceDelegate: AnyObject {
     func BookListLoaded(bookList: [Book])
 }
 
 class BookDataSource {
 
-    var delegate : BookDataSourceDelegate?
+    weak var delegate: BookDataSourceDelegate?
     let baseURL = "https://rss.itunes.apple.com/api/v1/us/books/top-free/all/100/non-explicit.json"
     var pageInterval:Int=20
     func loadListOfBooks(currentPage : Int){

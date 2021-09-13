@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  libraryProject
 //
 //  Created by Buse Şentürk on 15.07.2021.
@@ -9,20 +9,29 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    @IBOutlet weak var homeCollectionView: UICollectionView!
-    @IBOutlet weak var searchbutton: UIBarButtonItem!
+    @IBOutlet private weak var homeCollectionView: UICollectionView!
+    @IBOutlet private weak var searchbutton: UIBarButtonItem!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
     private let bookDataSource = BookDataSource()
     private var bookArray : [Book] = []
     private var bookArrayTmp : [Book] = []
-    private var currentPage: Int=1
+    private var currentPage: Int = 1
     private var raceCond: Bool = false
+    private var selectedIndex: Int = 0
+    private var showLoadingIndicator: Bool = false {
+        didSet {
+            showLoadingIndicator ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
+            homeCollectionView.isUserInteractionEnabled = !showLoadingIndicator
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         bookDataSource.delegate = self
+        showLoadingIndicator = true
         bookDataSource.loadListOfBooks(currentPage:1)
         homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         homeCollectionView.collectionViewLayout = ColumnFlowLayout(numberOfColumns: 2, minColumnSpacing: 10, minLineSpacing: 20)
@@ -67,6 +76,16 @@ extension HomeViewController: BookDataSourceDelegate {
         self.bookArray.append(contentsOf: bookList)
         self.bookArrayTmp.append(contentsOf: bookList)
         self.homeCollectionView.reloadData()
+        showLoadingIndicator = false
+    }
+}
+
+//MARK: - Navigation
+extension HomeViewController {
+    func goToBookDetailPage() {
+        guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        detailVC.book = bookArray[selectedIndex]
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -109,6 +128,7 @@ extension HomeViewController {
             let endScrolling = (scrollView.contentOffset.y + scrollView.frame.size.height)
             if endScrolling >= scrollView.contentSize.height {
                 currentPage+=1
+                showLoadingIndicator = true
                 bookDataSource.loadListOfBooks(currentPage: currentPage)
             }
         }
@@ -139,5 +159,10 @@ extension HomeViewController:  UICollectionViewDataSource, UICollectionViewDeleg
         }
         cell.likedButton?.setImage(UIImage(systemName: "star.fill"), for: .selected)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.item
+        goToBookDetailPage()
     }
 }

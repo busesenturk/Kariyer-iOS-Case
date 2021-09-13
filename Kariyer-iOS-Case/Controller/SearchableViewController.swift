@@ -34,7 +34,7 @@ class SearchableViewController: UIViewController{
 }
 
 // MARK: - SearchBar
-extension SearchableViewController: UISearchBarDelegate{
+extension SearchableViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredData = []
@@ -44,7 +44,7 @@ extension SearchableViewController: UISearchBarDelegate{
         else{
             for book in bookArray {
                 if let name = book.name {
-                    if name.lowercased().contains(searchText.lowercased()){
+                    if name.lowercased().contains(searchText.lowercased()) {
                         filteredData.append(book)
                     }
                 } else {
@@ -55,21 +55,16 @@ extension SearchableViewController: UISearchBarDelegate{
         self.searchTableView.reloadData()
     }
 }
+
 //MARK: - Navigation
 extension SearchableViewController {
-    
     func goToBookDetailPage() {
         guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
         detailVC.book = filteredData[selectedIndex]
         navigationController?.pushViewController(detailVC, animated: true)
     }
-    
-    // MARK: - To reach the book detail page
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedIndex = indexPath.row
-        goToBookDetailPage()
-    }
 }
+
 //MARK: - BookDataSourceDelegate
 extension SearchableViewController : BookDataSourceDelegate {
     func BookListLoaded(bookList: [Book]) {
@@ -78,8 +73,9 @@ extension SearchableViewController : BookDataSourceDelegate {
         self.searchTableView.reloadData()
     }
 }
+
 //MARK: - UITableViewDataSource, UITableViewDelegate
-extension SearchableViewController : UITableViewDataSource,UITableViewDelegate {
+extension SearchableViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
@@ -94,6 +90,12 @@ extension SearchableViewController : UITableViewDataSource,UITableViewDelegate {
         cell.bookReleaseDate?.text = book.releaseDate?.convertDateFormater()
         cell.bookPoster?.image = bookPoster
         return cell
+    }
+    
+    // MARK: - To reach the book detail page
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        goToBookDetailPage()
     }
 }
 

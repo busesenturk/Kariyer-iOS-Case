@@ -13,7 +13,7 @@
         <!--Books-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="libraryProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Kariyer_iOS_Case" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="fv5-uA-2c8" customClass="HomeCollectionViewCell" customModule="libraryProject" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="fv5-uA-2c8" customClass="HomeCollectionViewCell" customModule="Kariyer_iOS_Case" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="175" height="245"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Eej-Mg-gWk">
@@ -69,6 +69,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ire-YI-WjD"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OYL-30-PA3">
+                                <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,6 +81,8 @@
                             <constraint firstItem="2o1-lP-mEa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cze-oK-Uv1"/>
                             <constraint firstItem="2o1-lP-mEa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="M6Q-wH-gJe"/>
                             <constraint firstItem="2o1-lP-mEa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vci-5I-sJX"/>
+                            <constraint firstItem="OYL-30-PA3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="imv-6r-XOI"/>
+                            <constraint firstItem="OYL-30-PA3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wym-sh-j4s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Books" id="ieb-RE-zME">
@@ -96,6 +102,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeCollectionView" destination="2o1-lP-mEa" id="4DU-aZ-Ofs"/>
+                        <outlet property="loadingIndicator" destination="OYL-30-PA3" id="1bJ-Zt-551"/>
                         <outlet property="searchbutton" destination="d06-b2-9IV" id="rvc-1m-hKX"/>
                     </connections>
                 </viewController>
@@ -106,7 +113,7 @@
         <!--Search Books-->
         <scene sceneID="1y6-CG-r1T">
             <objects>
-                <viewController storyboardIdentifier="SearchableViewController" id="sMd-ox-mNR" customClass="SearchableViewController" customModule="libraryProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchableViewController" id="sMd-ox-mNR" customClass="SearchableViewController" customModule="Kariyer_iOS_Case" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F3K-2h-aDF">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +156,7 @@
         <!--Book Details-->
         <scene sceneID="C05-CW-cgi">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="YjD-sj-cFW" customClass="DetailViewController" customModule="libraryProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="YjD-sj-cFW" customClass="DetailViewController" customModule="Kariyer_iOS_Case" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j0B-Lp-ikh">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
