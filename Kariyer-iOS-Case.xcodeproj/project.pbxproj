@@ -31,7 +31,7 @@
 		A518435126AF277800A4C126 /* BookDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataSource.swift; sourceTree = "<group>"; };
 		A526F40626EE91AC00E8B200 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A526F40926EEA88E00E8B200 /* FavoritedBooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritedBooksModel.swift; sourceTree = "<group>"; };
-		A57B16AB26A0D89D00906884 /* libraryProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libraryProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57B16AB26A0D89D00906884 /* Kariyer-iOS-Case.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kariyer-iOS-Case.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B16AE26A0D89D00906884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B16B026A0D89D00906884 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A57B16B226A0D89D00906884 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		A57B16A226A0D89D00906884 = {
 			isa = PBXGroup;
 			children = (
-				A57B16AD26A0D89D00906884 /* libraryProject */,
+				A57B16AD26A0D89D00906884 /* Kariyer-iOS-Case */,
 				A57B16AC26A0D89D00906884 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,12 +87,12 @@
 		A57B16AC26A0D89D00906884 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A57B16AB26A0D89D00906884 /* libraryProject.app */,
+				A57B16AB26A0D89D00906884 /* Kariyer-iOS-Case.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A57B16AD26A0D89D00906884 /* libraryProject */ = {
+		A57B16AD26A0D89D00906884 /* Kariyer-iOS-Case */ = {
 			isa = PBXGroup;
 			children = (
 				A526F40826EEA86600E8B200 /* FavoritedBooks */,
@@ -106,7 +106,7 @@
 				A57B16B726A0D8A000906884 /* Assets.xcassets */,
 				A57B16BC26A0D8A000906884 /* Info.plist */,
 			);
-			path = libraryProject;
+			path = "Kariyer-iOS-Case";
 			sourceTree = "<group>";
 		};
 		A58865D926AE86AE0016157F /* Model */ = {
@@ -143,9 +143,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A57B16AA26A0D89D00906884 /* libraryProject */ = {
+		A57B16AA26A0D89D00906884 /* Kariyer-iOS-Case */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A57B16BF26A0D8A000906884 /* Build configuration list for PBXNativeTarget "libraryProject" */;
+			buildConfigurationList = A57B16BF26A0D8A000906884 /* Build configuration list for PBXNativeTarget "Kariyer-iOS-Case" */;
 			buildPhases = (
 				A57B16A726A0D89D00906884 /* Sources */,
 				A57B16A826A0D89D00906884 /* Frameworks */,
@@ -155,9 +155,9 @@
 			);
 			dependencies = (
 			);
-			name = libraryProject;
+			name = "Kariyer-iOS-Case";
 			productName = libraryProject;
-			productReference = A57B16AB26A0D89D00906884 /* libraryProject.app */;
+			productReference = A57B16AB26A0D89D00906884 /* Kariyer-iOS-Case.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A57B16A626A0D89D00906884 /* Build configuration list for PBXProject "libraryProject" */;
+			buildConfigurationList = A57B16A626A0D89D00906884 /* Build configuration list for PBXProject "Kariyer-iOS-Case" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A57B16AA26A0D89D00906884 /* libraryProject */,
+				A57B16AA26A0D89D00906884 /* Kariyer-iOS-Case */,
 			);
 		};
 /* End PBXProject section */
@@ -398,7 +398,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A57B16A626A0D89D00906884 /* Build configuration list for PBXProject "libraryProject" */ = {
+		A57B16A626A0D89D00906884 /* Build configuration list for PBXProject "Kariyer-iOS-Case" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A57B16BD26A0D8A000906884 /* Debug */,
@@ -407,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A57B16BF26A0D8A000906884 /* Build configuration list for PBXNativeTarget "libraryProject" */ = {
+		A57B16BF26A0D8A000906884 /* Build configuration list for PBXNativeTarget "Kariyer-iOS-Case" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A57B16C026A0D8A000906884 /* Debug */,
